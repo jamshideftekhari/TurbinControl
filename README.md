@@ -263,9 +263,9 @@ Pull requests trigger **lint + test only** — no deploy. Merging to `main` trig
 
 ### Step 1 — Provision Azure infrastructure (one-time)
 
-```bash
-# From the project root
-bash infra/setup.sh
+```powershell
+# From the project root (PowerShell)
+.\infra\setup.ps1
 ```
 
 This script:
@@ -334,7 +334,7 @@ ruff check .
 
 ### Deploying manually (without CI)
 
-```bash
+```powershell
 # Build image
 docker build -t turbincontrolacr.azurecr.io/turbincontrol:latest .
 
@@ -343,9 +343,9 @@ az acr login --name turbincontrolacr
 docker push turbincontrolacr.azurecr.io/turbincontrol:latest
 
 # Update the container app
-az containerapp update \
-  --name turbincontrol \
-  --resource-group turbincontrol-rg \
+az containerapp update `
+  --name turbincontrol `
+  --resource-group turbincontrol-rg `
   --image turbincontrolacr.azurecr.io/turbincontrol:latest
 ```
 
