@@ -4,7 +4,7 @@ from shared.domain.value_objects import TurbineId
 from monitoring.domain.value_objects import (
     Measurements, WindSpeed, PowerOutput, RotorRpm, Temperature, VibrationLevel,
 )
-from monitoring.domain.entities import Alert, AlertRule, TurbineReading
+#from monitoring.domain.entities import Alert, AlertRule, TurbineReading
 from monitoring.application.services import MonitoringService
 from monitoring.infrastructure.repositories import (
     InMemoryAlertRepository, InMemoryAlertRuleRepository, InMemoryReadingRepository,
